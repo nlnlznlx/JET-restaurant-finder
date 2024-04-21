@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container, .container-fluid {
+    padding: 20px 15px;
+}
+
+.form-inline {
+    justify-content: center;
+    padding: 20px 0;
+}
+
+footer {
+    background-color: #ff8000;
+    color: white;
+    padding: 10px 0;
+    margin-top: 20px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
