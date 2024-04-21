@@ -14,14 +14,17 @@ body {
     padding: 20px 0;
 }
 
+.restaurant {
+    background-color: #f8f8f8;
+    margin: 1px 0;
+    padding: 1px;
+    border: 1px solid #ddd;
+}
+
 footer {
     background-color: #ff8000;
     color: white;
     padding: 10px 0;
     margin-top: 20px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
 }
 
