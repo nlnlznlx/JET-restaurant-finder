@@ -6,26 +6,37 @@
     <link rel= "stylesheet" href= "style.css">
     <link rel= "stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <title>JET Restaurant Finder</title>
+    <link rel="icon" type="image/png" href="img/favicon.ico">
 </head>
 
 <body>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-xs-12 col-md-4 text-center">
-            <h1>Find Your Nearby Restaurant!</h1>
-            <form id="search-form" class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" id="search-postcode" name="postcode" placeholder="Enter a postcode, e.g. CT1 2EH" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <div class="col-xs-12 col-md-8 col-lg-6 text-center">
+            <img src="img/just-eat-takeaway-com-logo-vector.png" class="img-fluid">
+            <h4>Find Your Nearby Restaurant!</h4>
+            <form id="search-form" class="form-inline">
+                <div class="row">
+                    <div class="col-12 col-md-8">
+                        <input class="form-control" type="search" id="search-postcode" name="postcode" placeholder="Enter a postcode, e.g. CT1 2EH" aria-label="Search">
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </div>
+                </div>
             </form>
+            <br>
         </div>
     </div>
 
-    <div id="results" class="row row-cols-1 row-cols-md-2 g-4 my-3">
+    <div id="results">
     </div>
 </div>
 
 <footer class="container-fluid text-center">
-    <p>&copy; JUST EAT Takeaway.com</p>
+    <div class="copyright">
+        <b>&copy; JUST EAT Takeaway.com</b>
+    </div>
 </footer>
 
 <script src="script.js"></script>

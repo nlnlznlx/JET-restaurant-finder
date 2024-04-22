@@ -39,45 +39,40 @@ function showResults(restaurants) {
     resultsContainer.innerHTML = '';
 
     if (restaurants && restaurants.length > 0) {
+        let htmlContent = '<div class="container"><div class="row justify-content-center">';
+
         restaurants.forEach(restaurant => {
-            const restaurantDiv = document.createElement('div');
-            restaurantDiv.classList.add('restaurant');
+            const rating = restaurant.rating ?
+                `<img src="img/star_filled.png" class="icon-star"><span><strong>${restaurant.rating.starRating}</strong>/5 (${restaurant.rating.count})`
+                : 'No rating';
 
-            const image = document.createElement('img');
-            image.src = `https://just-eat-prod-eu-res.cloudinary.com/image/upload/c_fill,f_auto,q_auto,w_425,d_uk:cuisines:${restaurant.cuisines[0].uniqueName}-1.jpg/v1/uk/restaurants/${restaurant.id}.jpg`
-
-            const logo = document.createElement('img');
-            logo.src = restaurant.logoUrl;
-
-            const name = document.createElement('h4');
-            name.textContent = restaurant.name;
-
-            const cuisines = document.createElement('p');
-            cuisines.textContent = 'Cuisines: ' + restaurant.cuisines.map(cuisine => cuisine.name).join(', ');
-
-            const rating = document.createElement('p');
-            rating.textContent = 'Rating: ' + (restaurant.rating ? restaurant.rating.starRating : 'No rating');
-
-            const address = document.createElement('p');
-            address.textContent = `Address: ${restaurant.address.firstLine}, ${restaurant.address.city}, ${restaurant.address.postalCode}`;
-
-            restaurantDiv.appendChild(image);
-            restaurantDiv.appendChild(name);
-            restaurantDiv.appendChild(logo);
-            restaurantDiv.appendChild(cuisines);
-            restaurantDiv.appendChild(rating);
-            restaurantDiv.appendChild(address);
-
-            resultsContainer.appendChild(restaurantDiv);
+            htmlContent += `
+                <div class="col-12 col-md-6 mb-4">
+                    <div class="card">
+                        <div class="bg-image" style="background-image: url('https://just-eat-prod-eu-res.cloudinary.com/image/upload/c_fill,f_auto,q_auto,w_425,d_uk:cuisines:${restaurant.cuisines[0].uniqueName}-1.jpg/v1/uk/restaurants/${restaurant.id}.jpg');">
+                            <div class="name-logo">
+                                <img src="${restaurant.logoUrl}" class="logo">
+                                <h4 class="name">${restaurant.name}</h4>
+                            </div>
+                        </div>
+                        <div class="cuisine-labels">
+                            ${restaurant.cuisines.map(cuisine => `<span class="badge">${cuisine.name}</span>`).join(' ')}
+                        </div>
+                        <div class="rating">
+                            <span>${rating}</span>
+                        </div>
+                        <div class="address">
+                            <img src="img/location_pin.png" class="icon-pin">
+                            <span>${restaurant.address.firstLine}, ${restaurant.address.city}, ${restaurant.address.postalCode}</span>
+                        </div>
+                    </div>
+                </div>`;
         });
+
+        htmlContent += '</div></div>';
+        resultsContainer.innerHTML = htmlContent;
     } else {
-        resultsContainer.innerHTML = '';
-
-        const alertDiv = document.createElement('div');
-        alertDiv.className = 'alert alert-warning';
-        alertDiv.textContent = 'No restaurants found. Please enter another UK postcode.';
-
-        resultsContainer.appendChild(alertDiv);
+        resultsContainer.innerHTML = `<div class="alert alert-warning">No restaurants found. Please enter another UK postcode.</div>`;
     }
 }
 
