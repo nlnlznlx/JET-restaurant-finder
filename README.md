@@ -7,7 +7,6 @@ This is a web application that uses the Just Eat API to retrieve and display res
 To set up and run the project locally, follow these steps:
 
 1. Open your terminal
-
 2. Clone the repository using Git:
 
    ```bash
@@ -48,12 +47,14 @@ Here are some screenshots of the application in use:
 - Invalid Postcode Entry:
 
 <p align="center">
-  <img alt="Invalid Postcode Entry 1" src="https://github.com/nlnlznlx/JET-restaurant-finder/assets/127485018/a6fc03c5-e5db-4f65-b94c-e89c41c55942" width="45%" />
-  <img alt="Invalid Postcode Entry 2" src="https://github.com/nlnlznlx/JET-restaurant-finder/assets/127485018/72acda98-1212-447e-a39a-f5ff168e73c5" width="45%" />
+  <img alt="Invalid Postcode Entry 1" src="https://github.com/nlnlznlx/JET-restaurant-finder/assets/127485018/a6fc03c5-e5db-4f65-b94c-e89c41c55942" width="50%" />
+  <img alt="Invalid Postcode Entry 2" src="https://github.com/nlnlznlx/JET-restaurant-finder/assets/127485018/72acda98-1212-447e-a39a-f5ff168e73c5" width="50%" />
 </p>
 
 ## Assumptions
-To make the search results more visually appealing, I wanted to display food images in addition to restaurant logos. After inspecting the JET website, I found a consistent URL structure for header images. Since I lack access to the actual image directory, I constructed URLs based on observations of some sample in the following format: `https://just-eat-prod-eu-res.cloudinary.com/image/upload/c_fill,f_auto,q_auto,w_425,d_uk:cuisines:${restaurant.cuisines[0].uniqueName}-1.jpg/v1/uk/restaurants/${restaurant.id}.jpg`. 
+To make the search results more visually appealing, I wanted to display food images in addition to restaurant logos. 
+
+After inspecting the JET website, I found a consistent URL structure for header images. Since I lack access to the actual image directory, I constructed URLs based on observations of some sample in the following format: `https://just-eat-prod-eu-res.cloudinary.com/image/upload/c_fill,f_auto,q_auto,w_425,d_uk:cuisines:${restaurant.cuisines[0].uniqueName}-1.jpg/v1/uk/restaurants/${restaurant.id}.jpg`. 
 
 During tests, this method retrieves images for all UK postcodes listed in the assignment file, but further refinement may be necessary to ensure long-term viability and consistency.
 
