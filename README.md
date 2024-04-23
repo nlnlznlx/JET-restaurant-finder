@@ -56,7 +56,7 @@ To make the search results more visually appealing, I wanted to display food ima
 
 After inspecting the JET website, I found a consistent URL structure for header images. Since I lack access to the actual image directory, I constructed URLs based on observations of several samples in the following format: `https://just-eat-prod-eu-res.cloudinary.com/image/upload/c_fill,f_auto,q_auto,w_425,d_uk:cuisines:${restaurant.cuisines[0].uniqueName}-1.jpg/v1/uk/restaurants/${restaurant.id}.jpg`. 
 
-During tests, this method retrieves images for all UK postcodes listed in the assignment file, but further refinement may be necessary to ensure long-term viability and consistency.
+During tests, this method retrieves food images of restaurants for all UK postcodes listed in the assignment file, but further refinement may be necessary to ensure long-term viability and consistency.
 
 ## Potential improvements
 - Add filters to select restaurants by cuisines, location, and rating.
