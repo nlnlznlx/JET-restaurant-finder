@@ -5,11 +5,6 @@ body {
     height: 100%;
 }
 
-.container, .container-fluid {
-    padding: 20px 20px;
-    min-height: 100%;
-}
-
 .img-fluid {
     margin: auto;
     display: block;
@@ -17,21 +12,31 @@ body {
 
 .form-inline {
     justify-content: center;
-    padding: 20px 20px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.btn-outline-success {
+      border-color: #ff8000 !important;
+      color: #ff8000 !important;
+}
+
+.btn-outline-success:hover {
+    background-color: #ff8000 !important;
+    color: white !important;
 }
 
 #search-postcode {
-    min-width: 280px;
+    min-width: 270px;
 }
 
 footer {
     background-color: #ff8000;
     color: white;
-    margin-top: 20px;
 }
 
 .copyright{
-    margin: 10px auto 20px;
+    margin: 20px auto 30px;
 }
 
 .card {
@@ -73,7 +78,7 @@ footer {
     color: white;
     z-index: 2;
     margin: 0 10px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .name-logo {
@@ -122,8 +127,14 @@ footer {
     margin-left: 2px;
 }
 
-.alert-warning{
+.alert-warning {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
 }
+
 
 

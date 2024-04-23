@@ -69,7 +69,7 @@ function showResults(restaurants) {
                 </div>`;
         });
 
-        htmlContent += '</div></div>';
+        htmlContent += '</div><br></div>';
         resultsContainer.innerHTML = htmlContent;
     } else {
         resultsContainer.innerHTML = `<div class="alert alert-warning">No restaurants found. Please enter another UK postcode.</div>`;
